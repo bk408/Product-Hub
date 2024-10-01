@@ -2,7 +2,14 @@
 
 const NavBar = () => {
   return (
-    <div>NavBar</div>
+    <div className="nav-container">
+      <div className="nav-box">
+        <nav>
+          <h3>ProductHub</h3>
+        </nav>
+      </div>
+
+    </div>
   )
 }
 
