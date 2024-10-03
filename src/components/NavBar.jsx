@@ -19,6 +19,7 @@ const NavBar = () => {
           <select onChange={handleLogOut}>
             <option value="userName">{userName || "Guest"}</option>
             <option value="logout">Logout</option>
+            <option value="cart">Cart</option>
           </select>
         </div>
       </div>
