@@ -4,7 +4,7 @@ import Produts from "./Produts";
 const Main = () => {
   return (
     <div className="main-container">
-      <NavBar />
+      <NavBar/>
       <Produts />
     </div>
   );

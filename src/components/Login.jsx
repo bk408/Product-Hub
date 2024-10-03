@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../utils/UserContext";
 
 const Login = () => {
   const [userInput, setUserInput] = useState({
@@ -11,6 +12,8 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+
+  const { setUserName } = useContext(UserContext);
 
   const validateEmail = (email) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
@@ -55,11 +58,8 @@ const Login = () => {
     e.preventDefault();
     if (validateForm()) {
       console.log("Login success");
-      setUserInput({
-        name: "",
-        email: "",
-        password: "",
-      });
+      setUserName(userInput.name.toUpperCase());
+
       navigate("/home-page");
     } else {
       console.log("Invalid Login credential");
